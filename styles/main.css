@@ -52,8 +52,8 @@ button {
 }
 
 .nav-link.active{
-    border-bottom: 2px solid #2b2b31;
-    color: #2b2b31;
+    border-bottom: 2px solid #000000;
+    color: #000000;
 }
 
 /* Carousel */
@@ -71,6 +71,10 @@ button {
     padding: 10px;
     border-radius: 50%;
     
+}
+
+.carousel-control-next {
+    left: 84px;
 }
 
 
@@ -130,15 +134,10 @@ button {
 
 /* List */
 .list-group{
-    margin: auto;
-    width: auto;
+    width: 50%;
     
 }
 
-.list-left{
-    float: left;
-    
-}
 
 /* --------------------------------------------------- */
 /* Home Page */
