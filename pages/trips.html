@@ -66,94 +66,83 @@
 
                 <input type="radio" class="btn-check" name="radioFilter" id="originTripFilter" value="origin" autocomplete="off">
                 <label class="btn btn-outline-success" for="originTripFilter"><i class="bi bi-compass"></i> Origin Trips </label>
+
+                <input type="radio" class="btn-check" name="radioFilter" id="cheapTripFilter" value="cheap" autocomplete="off">
+                <label class="btn btn-outline-success" for="originTripFilter"><i class="bi bi-cash"></i> Cheap Trips </label>
+
+                <input type="radio" class="btn-check" name="radioFilter" id="expensiveTripFilter" value="expensive" autocomplete="off">
+                <label class="btn btn-outline-success" for="originTripFilter"><i class="bi bi-cash-stack"></i> Expensive Trips </label>
             </div>
 
-            <!-- Sort Radio Buttons -->
-            <div class="btn-group col-auto" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="RadioSort" id="dateSort" value="uploaded date" autocomplete="off">
-                <label class="btn btn-outline-secondary" for="dateSort"><i class="bi bi-calendar4"></i> Recent to Oldest</label>
-              
-                <input type="radio" class="btn-check" name= "RadioSort" id="sortFee" value="low to high" autocomplete="off">
-                <label class="btn btn-outline-secondary" for="sortFee"><i class="bi bi-sort-down-alt"></i>Price: Low to High</label>
-            </div>
         </div>
 
         <!-- List of plant cards -->
         <div class="row py-5 gy-3" id="plantsContainer">
 
-            <!-- Browse Card Template -->
-            <template id="plantCardTemplate">
-                <div class="col-4">
+          <!-- Browse List Template -->
+          <template id="tripListTemplate">
+                  
+            <!----------------------------------------------------------------------------------------------------------------------------------------->
+            <!-- List -->
 
-                    <!-- Card -->
-                    <div class="card">
-                        <img src="../assets/plant1.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" id="nameText">Ficus Tree</h5>
-                            <p class="card-text" id="priceText">R250</p>
-                            <p class="card-text" id="descriptionText">Beautiful and lush, this sweet-looking indoor plant gives off a refreshing aura with it's emerald-green leaves and long thin stem. Easy to care for and is at an ideal height, the Ficus Tree is a great addition to brighten your home.</p>
-                        </div>
-                    </div>
-                </div>
-            </template>
-            
+            <div class="container mt-3 mb-3 pt-3">
+              
+              <ul class="list-group mt-5 mb-3">
+                <li class="list-group-item">
+                  <h5>The Roman Expedition</h5>
+                  <p class="trip-text" id="informationText">Join us as we go to every shoreline that the Roman empire had once walked in only 6 months.</p>
+                  <p class="trip-cost" id="amountText">R1250</p>
+                </li>
+                <li class="list-group-item">
+                  <h5>To the End of the World</h5>
+                  <p class="trip-text" id="informationText">Come with us and explore a few of the stops one could make while on a 4 month course with pirates as they traveled the blue blue oceans.</p>
+                  <p class="trip-cost" id="amountText">R3140</p>
+                </li>
+                <li class="list-group-item">
+                  <h5>The Queen's Fair</h5>
+                  <p class="trip-text" id="informationText">Enjoy the smooth sailing through different cities and villas as they celebrate the beginning of spring, lasting only 2 months.</p>
+                  <p class="trip-cost" id="amountText">R14450</p>
+                </li>
+                <li class="list-group-item">
+                  <h5>The Tropical Bird Finds</h5>
+                  <p class="trip-text" id="informationText">Come and help our crew and other passengers explore and educate ourselves as we travel through different bird migration spots for 3-4 months.</p>
+                  <p class="trip-cost" id="amountText">R2460</p>
+                </li>
+                <li class="list-group-item">
+                  <h5>Ancient Civilizations</h5>
+                  <p class="trip-text" id="informationText">Come and enjoy a vastly intriguing an exciting trip to the different spots around the world, reveling in the miracles that we know as our history.</p>
+                  <p class="trip-cost" id="amountText">R5130</p>
+                </li>
+                <li class="list-group-item">
+                  <h5>Bahama Mama's Retreat</h5>
+                  <p class="trip-text" id="informationText">Join us on a relaxing, yet fun filled, month long trip to the beautiful tropical islands around the Mediterranean.</p>
+                  <p class="trip-cost" id="amountText">R2310</p>
+                </li>
+                <li class="list-group-item">
+                  <h5>Neptune's Deep Dive</h5>
+                  <p class="trip-text" id="informationText">Enjoy the great open seas, as well as all of the creatures in it with us as we scuba dive and explore our way through our 3 month trip.</p>
+                  <p class="trip-cost" id="amountText">R37220</p>
+                </li>
+                <li class="list-group-item">
+                  <h5>The Annual Species Restoration</h5>
+                  <p class="trip-text" id="informationText">Come and help us as we crew and travelers alike, go on a 5 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.</p>
+                  <p class="trip-cost" id="amountText">R1380</p>
+                </li>
+              </ul>
+              
+              <!--Small Card-->
+
+                
+            </div>
+
+          </template>
+                          
 
         </div>
-    </div>
+      </div>
       
 
-      <!----------------------------------------------------------------------------------------------------------------------------------------->
-      <!-- List -->
-
-      <div class="container mt-3 mb-3 pt-3">
-        
-        <ul class="list-group mt-5 mb-3">
-          <li class="list-group-item">
-            <h5>The Roman Expedition</h5>
-            <p class="trip-text" id="informationText">Join us as we go to every shoreline that the Roman empire had once walked in only 6 months.</p>
-            <p class="trip-cost" id="amountText">R1250</p>
-          </li>
-          <li class="list-group-item">
-            <h5>To the End of the World</h5>
-            <p class="trip-text" id="informationText">Come with us and explore a few of the stops one could make while on a 4 month course with pirates as they traveled the blue blue oceans.</p>
-            <p class="trip-cost" id="amountText">R3140</p>
-          </li>
-          <li class="list-group-item">
-            <h5>The Queen's Fair</h5>
-            <p class="trip-text" id="informationText">Enjoy the smooth sailing through different cities and villas as they celebrate the beginning of spring, lasting only 2 months.</p>
-            <p class="trip-cost" id="amountText">R14450</p>
-          </li>
-          <li class="list-group-item">
-            <h5>The Tropical Bird Finds</h5>
-            <p class="trip-text" id="informationText">Come and help our crew and other passengers explore and educate ourselves as we travel through different bird migration spots for 3-4 months.</p>
-            <p class="trip-cost" id="amountText">R2460</p>
-          </li>
-          <li class="list-group-item">
-            <h5>Ancient Civilizations</h5>
-            <p class="trip-text" id="informationText">Come and enjoy a vastly intriguing an exciting trip to the different spots around the world, reveling in the miracles that we know as our history.</p>
-            <p class="trip-cost" id="amountText">R5130</p>
-          </li>
-          <li class="list-group-item">
-            <h5>Bahama Mama's Retreat</h5>
-            <p class="trip-text" id="informationText">Join us on a relaxing, yet fun filled, month long trip to the beautiful tropical islands around the Mediterranean.</p>
-            <p class="trip-cost" id="amountText">R2310</p>
-          </li>
-          <li class="list-group-item">
-            <h5>Neptune's Deep Dive</h5>
-            <p class="trip-text" id="informationText">Enjoy the great open seas, as well as all of the creatures in it with us as we scuba dive and explore our way through our 3 month trip.</p>
-            <p class="trip-cost" id="amountText">R37220</p>
-          </li>
-          <li class="list-group-item">
-            <h5>The Annual Species Restoration</h5>
-            <p class="trip-text" id="informationText">Come and help us as we crew and travelers alike, go on a 3 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.</p>
-            <p class="trip-cost" id="amountText">R1380</p>
-          </li>
-        </ul>
-        
-        <!--Small Card-->
-
-          
-      </div>
+      
       
 
       <!----------------------------------------------------------------------------------------------------------------------------------------->
