@@ -123,11 +123,6 @@ button {
     margin: auto;
 }
 
-.small-card{
-    width: 30%;
-    height:150px;
-    margin: auto;
-}
 
 .card-img-overlay{
     background-color: #205982;
@@ -182,6 +177,16 @@ button {
     background-color: #0036565e;
 }
 
+.card{
+    height:40vh;
+    border-radius: 130px 130px 13px 13px;
+    background-color: #205982;
+    color:#f3f3f3;
+}
+
+.card-text{
+    color:white;
+}
 
 /* --------------------------------------------------- */
 /* Browse Trips */
@@ -196,8 +201,10 @@ button {
 /* Purchase Page */
 
 /* Side Card */
-.card{
+.card, .checkout{
     height:40vh;
+    width: 30%;
     float:right;
     border-radius: 13px;
+    margin-right: 5%;
 }
