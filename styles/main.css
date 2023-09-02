@@ -139,6 +139,19 @@ button {
     
 }
 
+/* Footer */
+.container, .text-center{
+    margin: auto;
+}
+
+.row .col-4{
+    float:right;
+}
+
+.button-toolbar{
+    margin-top: 50px;
+    float:right;
+}
 
 /* --------------------------------------------------- */
 /* Home Page */
@@ -162,7 +175,7 @@ button {
     position:relative;
     bottom: -80px;
     width: auto;
-
+    opacity: 60%;
 }
 
 .hero-image-overlay{
@@ -173,7 +186,18 @@ button {
 /* --------------------------------------------------- */
 /* Browse Trips */
 
+/* Trips Cards */
+.card{
+    margin:auto;
+}
 
 
 /* --------------------------------------------------- */
 /* Purchase Page */
+
+/* Side Card */
+.card{
+    height:40vh;
+    float:right;
+    border-radius: 13px;
+}

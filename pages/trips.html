@@ -37,100 +37,166 @@
           </ul>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">
-              <img src="../assets/search.svg" height="24">
-            </button>
+            <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search" style="font-size:medium;"></i></button>
           </form>
                 
         </div>
       </nav>
 
-      <div class="container mt-5 pt-5">
+      <div class="container mt-5 pt-5 mb-4">
 
         <!-- Header -->
         <h2>Browse Our Trips</h2>
 
-        <!-- Filters & Sorts-->
+        <!-- Filters -->
         <div class="row">
 
-            <!-- Filter Radio Buttons -->
-            <div class="btn-group col-auto" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="radioFilter" id="allTripsFilter" value="" autocomplete="off" checked>
-                <label class="btn btn-outline-success" for="allTripsFilter">All Trips</label>
+          <!-- Filter Radio Buttons -->
+          <div class="btn-group col-auto" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="radioFilter" id="allTripsFilter" value="" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="allTripsFilter">All Trips</label>
               
-                <input type="radio" class="btn-check" name="radioFilter" id="shortTripFilter" value="short" autocomplete="off">
-                <label class="btn btn-outline-success" for="shortTripFilter"><i class="bi bi-calendar2-week"></i> Short Trips </label>
+            <input type="radio" class="btn-check" name="radioFilter" id="shortTripFilter" value="short" autocomplete="off">
+            <label class="btn btn-outline-primary" for="shortTripFilter"><i class="bi bi-calendar2-week"></i> Short Trips </label>
               
-                <input type="radio" class="btn-check" name="radioFilter" id="longTripFilter" value="long" autocomplete="off">
-                <label class="btn btn-outline-success" for="longTripFilter"><i class="bi bi-calendar3"></i> Long Trips </label>
+            <input type="radio" class="btn-check" name="radioFilter" id="longTripFilter" value="long" autocomplete="off">
+            <label class="btn btn-outline-primary" for="longTripFilter"><i class="bi bi-calendar3"></i> Long Trips </label>
 
-                <input type="radio" class="btn-check" name="radioFilter" id="originTripFilter" value="origin" autocomplete="off">
-                <label class="btn btn-outline-success" for="originTripFilter"><i class="bi bi-compass"></i> Origin Trips </label>
+            <input type="radio" class="btn-check" name="radioFilter" id="originTripFilter" value="origin" autocomplete="off">
+            <label class="btn btn-outline-primary" for="originTripFilter"><i class="bi bi-compass"></i> Origin Trips </label>
+          </div>
 
-                <input type="radio" class="btn-check" name="radioFilter" id="cheapTripFilter" value="cheap" autocomplete="off">
-                <label class="btn btn-outline-success" for="originTripFilter"><i class="bi bi-cash"></i> Cheap Trips </label>
+          <!-- Sort Radio Buttons -->
+          <div class="btn-group col-auto" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="radioSort" id="cheapTripSort" value="cheap" autocomplete="off">
+            <label class="btn btn-outline-primary" for="originTripSort"><i class="bi bi-cash"></i> Cheap Trips </label>
 
-                <input type="radio" class="btn-check" name="radioFilter" id="expensiveTripFilter" value="expensive" autocomplete="off">
-                <label class="btn btn-outline-success" for="originTripFilter"><i class="bi bi-cash-stack"></i> Expensive Trips </label>
-            </div>
+            <input type="radio" class="btn-check" name="radioSort" id="expensiveTripSort" value="expensive" autocomplete="off">
+            <label class="btn btn-outline-primary" for="originTripSort"><i class="bi bi-cash-stack"></i> Expensive Trips </label>
+          </div>
 
         </div>
 
-        <!-- List of plant cards -->
-        <div class="row py-5 gy-3" id="plantsContainer">
+        <!-- List of trip cards -->
+        <div class="row py-5 gy-3" id="tripsContainer">
 
           <!-- Browse List Template -->
-          <template id="tripListTemplate">
+          <template id="tripCardTemplate">
                   
             <!----------------------------------------------------------------------------------------------------------------------------------------->
-            <!-- List -->
+            <!-- Trips Cards -->
 
             <div class="container mt-3 mb-3 pt-3">
               
-              <ul class="list-group mt-5 mb-3">
-                <li class="list-group-item">
-                  <h5>The Roman Expedition</h5>
-                  <p class="trip-text" id="informationText">Join us as we go to every shoreline that the Roman empire had once walked in only 6 months.</p>
-                  <p class="trip-cost" id="amountText">R1250</p>
-                </li>
-                <li class="list-group-item">
-                  <h5>To the End of the World</h5>
-                  <p class="trip-text" id="informationText">Come with us and explore a few of the stops one could make while on a 4 month course with pirates as they traveled the blue blue oceans.</p>
-                  <p class="trip-cost" id="amountText">R3140</p>
-                </li>
-                <li class="list-group-item">
-                  <h5>The Queen's Fair</h5>
-                  <p class="trip-text" id="informationText">Enjoy the smooth sailing through different cities and villas as they celebrate the beginning of spring, lasting only 2 months.</p>
-                  <p class="trip-cost" id="amountText">R14450</p>
-                </li>
-                <li class="list-group-item">
-                  <h5>The Tropical Bird Finds</h5>
-                  <p class="trip-text" id="informationText">Come and help our crew and other passengers explore and educate ourselves as we travel through different bird migration spots for 3-4 months.</p>
-                  <p class="trip-cost" id="amountText">R2460</p>
-                </li>
-                <li class="list-group-item">
-                  <h5>Ancient Civilizations</h5>
-                  <p class="trip-text" id="informationText">Come and enjoy a vastly intriguing an exciting trip to the different spots around the world, reveling in the miracles that we know as our history.</p>
-                  <p class="trip-cost" id="amountText">R5130</p>
-                </li>
-                <li class="list-group-item">
-                  <h5>Bahama Mama's Retreat</h5>
-                  <p class="trip-text" id="informationText">Join us on a relaxing, yet fun filled, month long trip to the beautiful tropical islands around the Mediterranean.</p>
-                  <p class="trip-cost" id="amountText">R2310</p>
-                </li>
-                <li class="list-group-item">
-                  <h5>Neptune's Deep Dive</h5>
-                  <p class="trip-text" id="informationText">Enjoy the great open seas, as well as all of the creatures in it with us as we scuba dive and explore our way through our 3 month trip.</p>
-                  <p class="trip-cost" id="amountText">R37220</p>
-                </li>
-                <li class="list-group-item">
-                  <h5>The Annual Species Restoration</h5>
-                  <p class="trip-text" id="informationText">Come and help us as we crew and travelers alike, go on a 5 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.</p>
-                  <p class="trip-cost" id="amountText">R1380</p>
-                </li>
-              </ul>
+              <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="../assets/Antarctia.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title" id="tripText">Arctic Circles</h5>
+                      <p class="card-text" id="feeText">R1450</p>
+                      <p class="card-text" id="informationText">Join us on this trip to Antarctica and explore this constant winter wonderland! We will be exploring and holding other frozen fun-time activities.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-body-secondary">Date of cruise: 05/09/2023</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="../assets/British Isles 2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-body-secondary">Date of cruise: 05/09/2023</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="../assets/Europe 1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-body-secondary">Date of cruise: 05/09/2023</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="../assets/Norway 1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-body-secondary">Date of cruise: 05/09/2023</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="../assets/Rome 1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-body-secondary">Date of cruise: 05/09/2023</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="../assets/Sydney 1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-body-secondary">Date of cruise: 05/09/2023</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="../assets/Venice 2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-body-secondary">Date of cruise: 05/09/2023</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="../assets/Rome 1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-body-secondary">Date of cruise: 05/09/2023</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
               
-              <!--Small Card-->
+              
 
                 
             </div>
@@ -147,11 +213,23 @@
 
       <!----------------------------------------------------------------------------------------------------------------------------------------->
       <!-- Footer -->
-      <div class="container">
-        <div class="col footer">
-          <div class="social-media">
-
-          </div>
+      <div class="row mt-5 mb-4">
+        <div class="col-8"></div>
+        <div class="col-4 mt-5 px-sm-5">
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group me-2" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-primary"><i class="bi bi-linkedin" style="font-size: 2rem;"></i></button>
+                </div>
+                <div class="btn-group me-2" role="group" aria-label="Second group">
+                    <button type="button" class="btn btn-primary"><i class="bi bi-facebook" style="font-size: 2rem;"></i></button>
+                </div>
+                <div class="btn-group me-2" role="group" aria-label="Third group">
+                    <button type="button" class="btn btn-primary"><i class="bi bi-instagram" style="font-size: 2rem;"></i></button>
+                </div>
+                <div class="btn-group" role="group" aria-label="Fourth group">
+                    <button type="button" class="btn btn-primary"><i class="bi bi-youtube" style="font-size: 2rem;"></i></button>
+                </div>
+            </div>
         </div>
       </div>
 
