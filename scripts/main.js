@@ -102,7 +102,7 @@ $(document).ready(function() {
     $("#informationText").hide();
 
 
-   loadTrips(arrTrips);
+   filterSortTrips(arrTrips);
 
 });
 
@@ -170,6 +170,25 @@ function filterSortTrips(){
     } else {
         filteredSortedArrTrips = arrTrips;
     };
+
+    // Sort Trips
+
+    if(appliedChosenSort == "high to low"){
+
+        // Sort the trips from highest to lowest price
+        filteredSortedArrTrips = filteredSortedArrTrips.sort((a,b) => {
+            return b.price - a.price;
+        });
+    } else if(appliedChosenSort == "cruiseDate"){
+
+        //sort trips from newest to oldest
+        filteredSortedArrTrips = filteredSortedArrTrips.sort((a,b) => {
+        let da = new Date(a.cruiseDate);
+        let db = new Date(b.cruiseDate);
+
+        return db - da;
+        });
+    }
 
     loadTrips(filteredSortedArrTrips);
 };
