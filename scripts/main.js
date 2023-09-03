@@ -5,7 +5,7 @@
 const arrTrips = [
     {
         name: "Arctic Circle",
-        fee: 1450,
+        amount: 1450,
         tripCode: "#A2561",
         caption: "Join us on this trip to Antarctica and explore this constant winter wonderland!",
         tripTime: "long",
@@ -15,7 +15,7 @@ const arrTrips = [
     },
     {
         name: "To the End of the World",
-        fee: 3140,
+        amount: 3140,
         tripCode: "#F3827",
         caption: "Come with us and explore a few of the stops one could make while on a 4 month course with pirates as they traveled the blue blue oceans.",
         tripTime: "short",
@@ -25,7 +25,7 @@ const arrTrips = [
     },
     {
         name: "The Queen's Fair",
-        fee: 1450,
+        amount: 1450,
         tripCode: "#H7493",
         caption: "Enjoy the smooth sailing through different cities and villas as they celebrate the beginning of spring, lasting only 2 months.",
         tripTime: "long",
@@ -36,7 +36,7 @@ const arrTrips = [
     },
     {
         name: "The Tropical Bird Finds",
-        fee: 2460,
+        amount: 2460,
         tripCode: "#G6157",
         caption: "Come and help our crew and other passengers explore and educate ourselves as we travel through different bird migration spots for 3-4 months.",
         tripTime: "long",
@@ -46,7 +46,7 @@ const arrTrips = [
     },
     {
         name: "Ancient Civilizations",
-        fee: 5130,
+        amount: 5130,
         tripCode: "#F3289",
         caption: "Come and enjoy a vastly intriguing an exciting trip to the different spots around the world, reveling in the miracles that we know as our history.",
         tripTime: "short",
@@ -56,7 +56,7 @@ const arrTrips = [
     },
     {
         name: "Bahama Mama's Retreat",
-        fee: 2310,
+        amount: 2310,
         tripCode: "#C0673",
         caption: "Join us on a relaxing, yet fun filled, month long trip to the beautiful tropical islands around the Mediterranean.",
         tripTime: "short",
@@ -66,7 +66,7 @@ const arrTrips = [
     },
     {
         name: "Neptune's Deep Dive",
-        fee: 37220,
+        amount: 37220,
         tripCode: "#E6794",
         caption: "Enjoy the great open seas, as well as all of the creatures in it with us as we scuba dive and explore our way through our 3 month trip.",
         tripTime: "short",
@@ -77,7 +77,7 @@ const arrTrips = [
     },
     {
         name: "The Annual Species Restoration",
-        fee: 1380,
+        amount: 1380,
         tripCode: "#A4318",
         caption: "Come and help us as we crew and travelers alike, go on a 5 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.",
         tripTime: "long",
@@ -87,7 +87,7 @@ const arrTrips = [
     },
     {
         name: "The Annual Species Restoration",
-        fee: 1380,
+        amount: 1380,
         tripCode: "#G3819",
         caption: "Come and help us as we crew and travelers alike, go on a 5 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.",
         tripTime: "short",
@@ -97,7 +97,7 @@ const arrTrips = [
     },
     {
         name: "The Annual Species Restoration",
-        fee: 1380,
+        amount: 1380,
         tripCode: "#F5781",
         caption: "Come and help us as we crew and travelers alike, go on a 5 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.",
         tripTime: "long",
@@ -157,10 +157,11 @@ function loadTrips(tripsToShow) {
         $(currentChild).find("#tripText").text(trip.name);
         $(currentChild).find("#feeText").text(trip.fee);
         $(currentChild).find("#informationText").text(trip.caption);
-        $(currentChild).find(".card-img-top").attr('src', 'assets/' + trip.image);
+        $(currentChild).find(".card-img-top").attr('src', '../assets/' + trip.image);
 
         // 4. Hide the information text from the current card
         $(currentChild).find("#informationText").hide();
+        
     };
 }
 
@@ -253,12 +254,13 @@ bookingDisplay = () => {
     let area = document.getElementById("bookOrder");
     let total = document.getElementById("bookAmount");
 
-    area.innerHTML = ""
+    area.innerHTML = "";
 
     let overallAmount = 0;
 
     for (let i = 0; i < bookOrder.length; i++){
         let name = bookOrder[i].tripName;
+        let code = bookOrder[i].tripCode;
         let caption = bookOrder[i].tripName;
         let date = bookOrder[i].tripDate;
         let amount = bookOrder[i].tripPrice;
@@ -273,10 +275,11 @@ bookingDisplay = () => {
                         <small class="text-body-secondary">${date}</small>
                     </div>
                     <p class="mb-1">${caption}</p>
+                    <p class="mb-1">${code}</p>
                     <small class="text-body-secondary">Fee: R${amount}</small>
             </a>`
         
-        total.innerHTML = "R" + overallAmount + ".00"
+        total.innerHTML = "R" + overallAmount + ".00";
     };
 
 };
