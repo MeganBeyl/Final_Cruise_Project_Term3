@@ -8,6 +8,7 @@ CheckoutDisplay = () => {
 
     for (let i = 0; i < data.length; i++){
         let name = data[i].tripName;
+        let code = data[i].tripCode;
         let date = data[i].tripDate;
         let caption = data[i].tripCaption;
         let amount = data[i].tripPrice;
@@ -15,14 +16,19 @@ CheckoutDisplay = () => {
         checkoutTotal += amount;
 
         items.innerHTML += `
-            <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">${name}</h5>
-                    <small class="text-body-secondary">${date}</small>
-                </div>
-                <p class="mb-1">${caption}</p>
-                <small class="text-body-secondary">Fee: R${amount}</small>
-            </a>
+            <table class="table">
+
+                <tbody>
+                    <tr>
+                        <th scope="row">${name}</th>
+                        <td>${date}</td>
+                        <td>${code}</td>
+                        <td>${caption}</td>
+                        <td>${amount}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
         `
 
         totalArea.innerHTML = "R" + checkoutTotal + ".00";

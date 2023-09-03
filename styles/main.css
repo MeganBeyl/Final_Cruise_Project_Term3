@@ -44,6 +44,11 @@ button {
     width: auto;
 }
 
+.navbar-brand:hover{
+    background-image: url("../assets/Logo\ 2.svg");
+    background-color: rgba(40, 54, 60, 0.6);
+}
+
 .nav-link{
     color:black;
 }
@@ -126,6 +131,10 @@ button {
 
 .card-img-overlay{
     background-color: #205982;
+}
+
+.card-img-top{
+    height: 30vh;
 }
 
 /* List */
