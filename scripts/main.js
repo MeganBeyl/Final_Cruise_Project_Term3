@@ -11,27 +11,30 @@ const arrTrips = [
         tripTime: "long",
         tripFee: "expensive",
         destination: "single",
+        dateOfCruise: "05/09/2023",
         image: "Antarctica.jpg",
     },
     {
         name: "To the End of the World",
         price: 3140,
         code: "#F3827",
-        caption: "Come with us and explore a few of the stops one could make while on a 4 month course with pirates as they traveled the blue blue oceans.",
+        caption: "Come with us and explore a few of the stops one could find hidden amongst the bigger gems of the world.",
         tripTime: "short",
         tripFee: "expensive",
         destination: "single",
+        dateOfCruise: "11/08/2023",
         image: "Brixham.jpg",
     },
     {
         name: "The Queen's Fair",
-        price: 1450,
+        price: 1650,
         code: "#H7493",
         caption: "Enjoy the smooth sailing through different cities and villas as they celebrate the beginning of spring, lasting only 2 months.",
         tripTime: "long",
         tripFee: "cheap",
         destination: "single",
         originTrip: "origin",
+        dateOfCruise: "15/09/2023",
         image: "British Isles.jpg",
     },
     {
@@ -42,6 +45,7 @@ const arrTrips = [
         tripTime: "long",
         tripFee: "expensive",
         destination: "single",
+        dateOfCruise: "18/11/2023",
         image: "Galapagos Islands 2.png",
     },
     {
@@ -52,58 +56,64 @@ const arrTrips = [
         tripTime: "short",
         tripFee: "cheap",
         destination: "single",
+        dateOfCruise: "25/10/2023",
         image: "Europe 1.jpg",
     },
     {
         name: "Venice Retreat",
         price: 2310,
         code: "#C0673",
-        caption: "Join us on a relaxing, yet fun filled, month long trip to the beautiful tropical islands around the Mediterranean.",
+        caption: "Join us on a relaxing, yet fun filled trip to the beautiful tropical islands around the Mediterranean.",
         tripTime: "short",
         tripFee: "expensive",
         destination: "single",
+        dateOfCruise: "15/09/2023",
         image: "Venice 2.jpg",
     },
     {
         name: "Neptune's Deep Dive",
-        price: 37220,
+        price: 3720,
         code: "#E6794",
-        caption: "Enjoy the great open seas, as well as all of the creatures in it with us as we scuba dive and explore our way through our 3 month trip.",
+        caption: "Enjoy the great open seas, as well as all of the creatures in it with us as we scuba dive and explore our way through our short trip.",
         tripTime: "short",
         tripFee: "cheap",
         destination: "single",
         originTrip: "origin",
+        dateOfCruise: "04/11/2023",
         image: "Caribbean 1.jpg",
     },
     {
         name: "Croatian Trip",
         price: 1380,
         code: "#A4318",
-        caption: "Come and help us as we crew and travelers alike, go on a 5 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.",
+        caption: "Join our students as they embark on their first trip to the small villages of Croatia to study the native wild life on their way there.",
         tripTime: "long",
         tripFee: "expensive",
         destination: "single",
+        dateOfCruise: "08/06/2023",
         image: "Hvar - Croatia.jpg",
     },
     {
         name: "The Annual Species Restoration",
         price: 2480,
         code: "#G3819",
-        caption: "Come and help us as we crew and travelers alike, go on a 5 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.",
+        caption: "Enjoy the open blue skies and the beautiful blue oceans coasting the European countryside.",
         tripTime: "short",
         tripFee: "expensive",
         destination: "single",
+        dateOfCruise: "07/09/2023",
         image: "Norway 1.jpg",
     },
     {
         name: "The British Isles",
         price: 1720,
         code: "#F5781",
-        caption: "Come and help us as we crew and travelers alike, go on a 5 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.",
+        caption: "Come and help us as we crew and travelers alike, go on a 2 month trip to different marine biomes to study and conserve the animals and creatures that grace our beautiful waters.",
         tripTime: "long",
         tripFee: "cheap",
         destination: "single",
         originTrip: "origin",
+        dateOfCruise: "07/12/2023",
         image: "British Isles 2.jpg",
     },
 ];
@@ -155,8 +165,9 @@ function loadTrips(tripsToShow) {
 
         // 3. Set the content for the current trip card from the trip array
         $(currentChild).find("#tripText").text(trip.name);
-        $(currentChild).find("#amountText").text(trip.fee);
+        $(currentChild).find("#amountText").text(trip.price);
         $(currentChild).find("#informationText").text(trip.caption);
+        $(currentChild).find("#dateCruise").text(trip.dateOfCruise);
         $(currentChild).find(".card-img-top").attr('src', '../assets/' + trip.image);
 
         // 4. Hide the information text from the current card
@@ -234,7 +245,7 @@ $(document).ready(function(){
 
     $.ajax({
         type:"GET",
-        url:"https://api.openweathermap.org/data/2.5/weather?q=Pretoria&appid=7dd63d61e362d45b624016eac378b633",
+        url:"https://api.openweathermap.org/data/2.5/weather?q=Centurion&appid=7dd63d61e362d45b624016eac378b633",
         success: function(data){
 
             weatherData = data;
@@ -252,7 +263,7 @@ $(document).ready(function(){
 
 bookingDisplay = () => {
     let area = document.getElementById("bookOrder");
-    let total = document.getElementById("bookAmount");
+    let total = document.getElementById("overallAmount");
 
     area.innerHTML = "";
 
@@ -261,11 +272,11 @@ bookingDisplay = () => {
     for (let i = 0; i < bookOrder.length; i++){
         let name = bookOrder[i].tripName;
         let code = bookOrder[i].tripCode;
-        let caption = bookOrder[i].tripName;
+        let caption = bookOrder[i].tripCaption;
         let date = bookOrder[i].tripDate;
-        let amount = bookOrder[i].tripPrice;
+        let price = bookOrder[i].tripPrice;
 
-        overallAmount += amount;
+        overallAmount += price;
 
         area.innerHTML +=`
         
@@ -276,12 +287,12 @@ bookingDisplay = () => {
                     </div>
                     <p class="mb-1">${caption}</p>
                     <p class="mb-1">${code}</p>
-                    <small class="text-body-secondary">Fee: R${amount}</small>
+                    <small class="text-body-secondary">Fee: R${price}</small>
             </a>`
         
-        total.innerHTML = "R" + overallAmount + ".00";
+        total.innerHTML = "R" + price + ".00";
     };
-
+    console.log(total.innerHTML);
 };
 
 // Add the booking order to the purchase page

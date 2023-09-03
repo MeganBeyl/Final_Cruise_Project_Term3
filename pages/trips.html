@@ -86,7 +86,7 @@
         <!-- List of trip cards -->
         <div class="row py-5 gy-3" id="tripsContainer">
 
-                          
+        <!-- All trip cards load in next to each other -->           
 
         </div>
       </div>
@@ -95,20 +95,24 @@
       <template id="tripCardTemplate">
                   
         <!----------------------------------------------------------------------------------------------------------------------------------------->
-        <!-- Trips Cards -->
+        <!-- Trips Card List -->
 
-        <div class="col-4 mt-5 mb-5" style="width:100%;">
-          <div class="card mt-3 mb-3" style="float: left; background-color: white; border-style:ridge; border-color: black;">
-            <img src="../assets/Antarctia.jpg" class="card-img-top" alt="...">
-            <button type="button" class="btn btn-outline-warning" id= "bookOrder" onclick="checkOut()">Add to Cart</button>
-            <div class="card-body">
-              <h5 class="card-title" id="tripText">Arctic Circles</h5>
-              <p class="card-text" id="amountText" style="color:black; padding-top: 5px;">R1450</p>
-              <p class="card-text" id="informationText" style="color:black;">Join us on this trip to Antarctica and explore this constant winter wonderland! We will be exploring and holding other frozen fun-time activities.</p>
-              
-            </div>
-            <div class="card-footer">
-              <small class="text-body-secondary" id="dateCruise">Date of cruise: 05/09/2023</small>
+        <div class="row pt-5">
+          <div class="col-4 mt-5 mb-5">
+
+            <!-- Trips Card -->
+            <div class="card mt-3 mb-3" style="float: left; background-color: white; border-style:ridge; border-color: black;">
+              <img src="../assets/Antarctia.jpg" class="card-img-top" alt="...">
+              <button type="button" class="btn btn-outline-warning" id= "bookOrder" onclick="checkOut()">Add to Cart</button>
+              <div class="card-body">
+                <h5 class="card-title" id="tripText">Arctic Circles</h5>
+                <p class="card-text" id="amountText" style="color:black; padding-top: 5px;">R1450</p>
+                <p class="card-text" id="informationText" style="color:black;">Join us on this trip to Antarctica and explore this constant winter wonderland! We will be exploring and holding other frozen fun-time activities.</p>
+                
+              </div>
+              <div class="card-footer">
+                <small class="text-body-secondary" id="dateCruise">Date of cruise: 05/09/2023</small>
+              </div>
             </div>
           </div>
         </div>

@@ -11,9 +11,9 @@ CheckoutDisplay = () => {
         let code = data[i].tripCode;
         let date = data[i].tripDate;
         let caption = data[i].tripCaption;
-        let amount = data[i].tripPrice;
+        let price = data[i].tripPrice;
 
-        checkoutTotal += amount;
+        checkoutTotal += price;
 
         items.innerHTML += `
             <table class="table">
@@ -24,7 +24,7 @@ CheckoutDisplay = () => {
                         <td>${date}</td>
                         <td>${code}</td>
                         <td>${caption}</td>
-                        <td>${amount}</td>
+                        <td>${price}</td>
                     </tr>
                     
                 </tbody>

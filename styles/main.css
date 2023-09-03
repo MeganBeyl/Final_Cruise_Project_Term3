@@ -118,6 +118,10 @@ button {
     left: 50px;
 }
 
+.col-4{
+    width: 100%;
+}
+
 .card-text{
     color:black;
 }
