@@ -302,3 +302,14 @@ checkOut = () => {
     localStorage.setItem('bookOrder', data);
     window.location.href = '../pages/purchase.html';
 }
+
+// ----------------------------------------------------------------------------
+//When a remove button is clicked
+// ----------------------------------------------------------------------------
+$(document).ready(function(){
+
+    //Remove button click event
+    $(document).on("click", ".btn-btn-danger", function(){
+        $(this).closest("tr").remove();
+    });
+});
