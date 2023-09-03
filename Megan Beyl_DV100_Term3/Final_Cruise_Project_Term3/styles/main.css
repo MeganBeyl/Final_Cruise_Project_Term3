@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Oswald&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+/* --------------------------------------------------- */
+/* Global Styles */
+
+/* Fonts */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+}
+
+p{
+    font-family: 'Dosis', sans-serif ;
+    font-size: 15px;
+}
+
+
+/* Spacing */
+.full-height{
+    height: 100vh;
+
+}
+
+/* --------------------------------------------------- */
+/* Components */
+button {
+    border: none;
+    padding: 16px 20px;
+    border-radius: 8px;
+    background: #205982;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+
+/* --------------------------------------------------- */
+/* Bootstrap Components */
+
+/* Navigation */
+
+.navbar-brand{
+    height:45px;
+    width: auto;
+}
+
+.navbar-brand:hover{
+    background-image: url("../assets/Logo\ 2.svg");
+    background-color: rgba(40, 54, 60, 0.6);
+}
+
+.nav-link{
+    color:black;
+}
+
+.nav-link:hover{
+    color: #2b2b31;
+}
+
+.nav-link.active{
+    border-bottom: 2px solid #000000;
+    color: #000000;
+}
+
+/* Carousel */
+.carousel-item{
+    background-color: rgb(68, 159, 166);
+}
+
+.carousel-control-next, .carousel-control-prev{
+    top:auto;
+    right:auto;
+    left: 20px;
+    bottom: 24px;
+    width:auto;
+    background-color: darkblue;
+    padding: 10px;
+    border-radius: 50%;
+    
+}
+
+.carousel-control-next {
+    left: 84px;
+}
+
+
+
+/* Accordion */ 
+.accordion-item{
+    background: rgb(rgb(191, 166, 65), green, blue);
+}
+
+.accordion{
+    color:black;
+    margin:auto;
+}
+
+.accordion-header{
+    background-color: black;
+}
+
+.accordion-button{
+    color:black;
+}
+
+
+/* Card */
+
+.card{
+    border-radius: 130px 130px 13px 13px;
+    background: #f3f3f3;
+    text-align: center;
+    height: 450px;
+    width: 30%;
+    border: none;
+    margin: auto;
+    float: left;
+    left: 50px;
+}
+
+.col-4{
+    width: 100%;
+}
+
+.card-text{
+    color:black;
+}
+
+.card-img{
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+
+
+.card-img-overlay{
+    background-color: #205982;
+}
+
+.card-img-top{
+    height: 30vh;
+}
+
+/* List */
+.list-group{
+    width: 60%;
+    
+}
+
+/* Footer */
+.container, .text-center{
+    margin: auto;
+}
+
+.row .col-4{
+    float:right;
+}
+
+.button-toolbar{
+    margin-top: 50px;
+    float:right;
+}
+
+/* --------------------------------------------------- */
+/* Home Page */
+.hero-image-1{
+    height:auto;
+    position:relative;
+    bottom: -80px;
+    width: auto;
+
+}
+
+.hero-image-2{
+    height:auto;
+    position:relative;
+    bottom: -80px;
+    width: auto;
+}
+
+.hero-image-3{
+    height:auto;
+    position:relative;
+    bottom: -80px;
+    width: auto;
+    opacity: 60%;
+}
+
+.hero-image-overlay{
+    background-color: #0036565e;
+}
+
+.card{
+    height:40vh;
+    border-radius: 130px 130px 13px 13px;
+    background-color: #205982;
+    color:#f3f3f3;
+}
+
+.card-text{
+    color:white;
+}
+
+/* --------------------------------------------------- */
+/* Browse Trips */
+
+/* Trips Cards */
+.card{
+    margin:auto;
+    float: left;
+}
+
+.card-title{
+    color: #003756;
+}
+
+
+
+/* --------------------------------------------------- */
+/* Purchase Page */
+
+/* Side Card */
+.card, .checkout{
+    height:40vh;
+    width: 30%;
+    float:right;
+    border-radius: 13px;
+    margin-right: 5%;
+}
+
+.btn-btn-danger{
+    margin:auto;
+    height: 150px;
+    width: 150px;
+    border-radius: 35px;
+    text-align: center;
+}
