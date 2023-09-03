@@ -6,81 +6,104 @@ const arrTrips = [
     {
         name: "Arctic Circle",
         fee: 1450,
+        tripCode: "#A2561",
         caption: "Join us on this trip to Antarctica and explore this constant winter wonderland!",
         tripTime: "long",
         tripFee: "expensive",
+        destination: "single",
         image: "Antarctica.jpg",
     },
     {
         name: "To the End of the World",
         fee: 3140,
+        tripCode: "#F3827",
         caption: "Come with us and explore a few of the stops one could make while on a 4 month course with pirates as they traveled the blue blue oceans.",
         tripTime: "short",
         tripFee: "expensive",
+        destination: "single",
         image: "Antarctica.jpg",
     },
     {
         name: "The Queen's Fair",
-        fee: 14450,
+        fee: 1450,
+        tripCode: "#H7493",
         caption: "Enjoy the smooth sailing through different cities and villas as they celebrate the beginning of spring, lasting only 2 months.",
         tripTime: "long",
         tripFee: "cheap",
+        destination: "single",
+        originTrip: "origin",
         image: "Antarctica.jpg",
     },
     {
         name: "The Tropical Bird Finds",
         fee: 2460,
+        tripCode: "#G6157",
         caption: "Come and help our crew and other passengers explore and educate ourselves as we travel through different bird migration spots for 3-4 months.",
         tripTime: "long",
         tripFee: "expensive",
+        destination: "single",
         image: "Antarctica.jpg",
     },
     {
         name: "Ancient Civilizations",
         fee: 5130,
+        tripCode: "#F3289",
         caption: "Come and enjoy a vastly intriguing an exciting trip to the different spots around the world, reveling in the miracles that we know as our history.",
         tripTime: "short",
         tripFee: "cheap",
+        destination: "single",
         image: "Antarctica.jpg",
     },
     {
         name: "Bahama Mama's Retreat",
         fee: 2310,
+        tripCode: "#C0673",
         caption: "Join us on a relaxing, yet fun filled, month long trip to the beautiful tropical islands around the Mediterranean.",
         tripTime: "short",
         tripFee: "expensive",
+        destination: "single",
         image: "Antarctica.jpg",
     },
     {
         name: "Neptune's Deep Dive",
         fee: 37220,
+        tripCode: "#E6794",
         caption: "Enjoy the great open seas, as well as all of the creatures in it with us as we scuba dive and explore our way through our 3 month trip.",
         tripTime: "short",
         tripFee: "cheap",
+        destination: "single",
+        originTrip: "origin",
         image: "Antarctica.jpg",
     },
     {
         name: "The Annual Species Restoration",
         fee: 1380,
+        tripCode: "#A4318",
         caption: "Come and help us as we crew and travelers alike, go on a 5 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.",
         tripTime: "long",
         tripFee: "expensive",
+        destination: "single",
         image: "Antarctica.jpg",
     },
     {
         name: "The Annual Species Restoration",
         fee: 1380,
+        tripCode: "#G3819",
         caption: "Come and help us as we crew and travelers alike, go on a 5 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.",
         tripTime: "short",
         tripFee: "expensive",
+        destination: "single",
         image: "Antarctica.jpg",
     },
     {
         name: "The Annual Species Restoration",
         fee: 1380,
+        tripCode: "#F5781",
         caption: "Come and help us as we crew and travelers alike, go on a 5 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.",
         tripTime: "long",
         tripFee: "cheap",
+        destination: "single",
+        originTrip: "origin",
         image: "Antarctica.jpg",
     },
 ];
@@ -206,4 +229,62 @@ $("#tripsContainer").on('click', '.card', function() {
     $(this).find(".card-img-top").toggleClass("small");
 });
 
+$(document).ready(function(){
 
+    $.ajax({
+        type:"GET",
+        url:"https://api.openweathermap.org/data/2.5/weather?q=Pretoria&appid=7dd63d61e362d45b624016eac378b633",
+        success: function(data){
+
+            weatherData = data;
+
+            console.log(data);
+
+        }
+    }) .done(function(){
+        $("#weatherData").html(Math.round(weatherData.main.temp -273) + "ºC");
+    })
+})
+
+// ----------------------------------------------------------------------------
+// Add Booking to checkout
+
+bookingDisplay = () => {
+    let area = document.getElementById("bookOrder");
+    let total = document.getElementById("bookAmount");
+
+    area.innerHTML = ""
+
+    let overallAmount = 0;
+
+    for (let i = 0; i < bookOrder.length; i++){
+        let name = bookOrder[i].tripName;
+        let caption = bookOrder[i].tripName;
+        let date = bookOrder[i].tripDate;
+        let amount = bookOrder[i].tripPrice;
+
+        overallAmount += amount;
+
+        area.innerHTML +=`
+        
+            <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">${name}</h5>
+                        <small class="text-body-secondary">${date}</small>
+                    </div>
+                    <p class="mb-1">${caption}</p>
+                    <small class="text-body-secondary">Fee: R${amount}</small>
+            </a>`
+        
+        total.innerHTML = "R" + overallAmount + ".00"
+    };
+
+};
+
+// Add the booking order to the purchase page
+
+checkOut = () => {
+    let data =JSON.stringify(bookOrder);
+    localStorage.setItem('bookOrder', data);
+    window.location.href = '../pages/purchase.html';
+}

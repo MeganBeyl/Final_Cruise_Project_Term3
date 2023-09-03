@@ -48,30 +48,9 @@
       <!----------------------------------------------------------------------------------------------------------------------------------------->
       <!-- List -->
         <div class="list-group pt-md-5 mt-5 m-sm-5">
-            <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Cruise Name</h5>
-                    <small>Date of Cruise:</small>
-                </div>
-                <p class="mb-1">Description of cruise here.</p>
-                <small>Fee: R</small>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Cruise Name</h5>
-                    <small class="text-body-secondary">Date of Cruise:</small>
-                </div>
-                <p class="mb-1">Description of cruise here.</p>
-                <small class="text-body-secondary">Fee: R</small>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Cruise Name</h5>
-                    <small class="text-body-secondary">Date of Cruise:</small>
-                </div>
-                <p class="mb-1">Description of cruise here.</p>
-                <small class="text-body-secondary">Fee: R</small>
-            </a>
+            <div id="bookOrder">
+
+            </div>
         </div>
         
         
@@ -80,8 +59,11 @@
             <div class="card-body">
                 <h5 class="card-title"><strong>Checkout:</strong></h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">Here you can find the total for your trip(s)</h6>
-                
-                <a href="#" class="btn btn-light">Discount Here</a>
+
+                <h3 id="totalCheck" class="total">R0.00</h3>
+
+                <h3>Enter a Promo Code here!</h3>
+                <input type="text" class="form-control" placeholder="#1111" id="promoCode">
                 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-warning" style="background-color: #003756; color: white;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -103,7 +85,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Accept Booking</button>
+                                <button type="button" class="btn btn-primary" onclick="resetBack()">Accept Booking</button>
                             </div>
                         </div>
                     </div>
