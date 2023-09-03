@@ -194,7 +194,13 @@ button {
 /* Trips Cards */
 .card{
     margin:auto;
+    float: left;
 }
+
+.card-title{
+    color: #003756;
+}
+
 
 
 /* --------------------------------------------------- */

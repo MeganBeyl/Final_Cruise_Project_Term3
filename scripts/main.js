@@ -17,6 +17,7 @@ const arrTrips = [
         caption: "Come with us and explore a few of the stops one could make while on a 4 month course with pirates as they traveled the blue blue oceans.",
         tripTime: "short",
         tripFee: "expensive",
+        image: "Antarctica.jpg",
     },
     {
         name: "The Queen's Fair",
@@ -24,6 +25,7 @@ const arrTrips = [
         caption: "Enjoy the smooth sailing through different cities and villas as they celebrate the beginning of spring, lasting only 2 months.",
         tripTime: "long",
         tripFee: "cheap",
+        image: "Antarctica.jpg",
     },
     {
         name: "The Tropical Bird Finds",
@@ -31,6 +33,7 @@ const arrTrips = [
         caption: "Come and help our crew and other passengers explore and educate ourselves as we travel through different bird migration spots for 3-4 months.",
         tripTime: "long",
         tripFee: "expensive",
+        image: "Antarctica.jpg",
     },
     {
         name: "Ancient Civilizations",
@@ -38,6 +41,7 @@ const arrTrips = [
         caption: "Come and enjoy a vastly intriguing an exciting trip to the different spots around the world, reveling in the miracles that we know as our history.",
         tripTime: "short",
         tripFee: "cheap",
+        image: "Antarctica.jpg",
     },
     {
         name: "Bahama Mama's Retreat",
@@ -45,6 +49,7 @@ const arrTrips = [
         caption: "Join us on a relaxing, yet fun filled, month long trip to the beautiful tropical islands around the Mediterranean.",
         tripTime: "short",
         tripFee: "expensive",
+        image: "Antarctica.jpg",
     },
     {
         name: "Neptune's Deep Dive",
@@ -52,6 +57,7 @@ const arrTrips = [
         caption: "Enjoy the great open seas, as well as all of the creatures in it with us as we scuba dive and explore our way through our 3 month trip.",
         tripTime: "short",
         tripFee: "cheap",
+        image: "Antarctica.jpg",
     },
     {
         name: "The Annual Species Restoration",
@@ -59,6 +65,7 @@ const arrTrips = [
         caption: "Come and help us as we crew and travelers alike, go on a 5 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.",
         tripTime: "long",
         tripFee: "expensive",
+        image: "Antarctica.jpg",
     },
     {
         name: "The Annual Species Restoration",
@@ -66,6 +73,7 @@ const arrTrips = [
         caption: "Come and help us as we crew and travelers alike, go on a 5 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.",
         tripTime: "short",
         tripFee: "expensive",
+        image: "Antarctica.jpg",
     },
     {
         name: "The Annual Species Restoration",
@@ -73,11 +81,12 @@ const arrTrips = [
         caption: "Come and help us as we crew and travelers alike, go on a 5 month trip to different marine biomes to study and conserve the animals and creatures that graces our beautiful waters.",
         tripTime: "long",
         tripFee: "cheap",
+        image: "Antarctica.jpg",
     },
 ];
 
 let appliedChosenFilter = "";
-let appliedChosenSort = "cheap";
+let appliedChosenSort = "high to low";
 
 // ----------------------------------------------------------------------------
 //When the document loads
